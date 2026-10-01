@@ -1,0 +1,23 @@
+faster-whisper
+sounddevice
+soundcard
+webrtcvad-wheels
+numpy
+scipy
+pillow
+deepfilternet
+vosk
+deepgram-sdk
+# deepgram-sdk is only needed for --engine deepgram (the online mode -- see
+# README's "Online mode" section). Requires a free API key from
+# console.deepgram.com set as the DEEPGRAM_API_KEY environment variable.
+# vosk-model-small-en-us-0.15 must be unzipped alongside this script --
+# https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip
+# (the larger vosk-model-en-us-0.22 does NOT work for this -- it ignores
+# runtime grammar constraints entirely, see ham_grammar.py docstring)
+# torch/torchaudio must be the CPU builds from https://download.pytorch.org/whl/cpu
+# and pinned to 2.0.1/2.0.2 -- newer torchaudio removed the
+# torchaudio.backend.common API that DeepFilterNet's df/io.py depends on.
+# pip install torch==2.0.1 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cpu
+torch==2.0.1
+torchaudio==2.0.2

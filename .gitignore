@@ -1,0 +1,31 @@
+# Virtual environment / caches
+.venv/
+__pycache__/
+*.pyc
+
+# Downloaded models -- large, re-downloadable (see README for the URL)
+vosk-model-small-en-us-0.15/
+
+# Machine-specific CA cert bundles (see README's SSL section) -- never
+# publish a merged bundle, it's specific to one machine's AV root cert
+merged-ca-bundle.pem
+avast-root.pem
+*.pem
+
+# Dev/debug session logs and scratch outputs -- not needed to run or
+# understand the project, just noise from iterative live testing
+*.log
+gui_run_*.log
+
+# Debug/verification audio artifacts generated while chasing specific
+# bugs (resampling math checks, raw processed-audio dumps) -- not
+# needed to run the project. test_phrase.wav IS kept (small, used by
+# test_transcribe.py as a fixture).
+processed_output.wav
+upsampled_check.wav
+upsampled_chunked_check.wav
+
+# Never commit secrets
+.env
+*api_key*
+*secret*
